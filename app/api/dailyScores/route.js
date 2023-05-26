@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const response = await fetch(
-    `https://api.mysportsfeeds.com/v2.1/pull/mlb/current/date/20230523/games.json`,
+    `https://api.mysportsfeeds.com/v2.1/pull/mlb/current/date/20230525/games.json`,
     {
       method: "GET",
       headers: {
