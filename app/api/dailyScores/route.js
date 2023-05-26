@@ -1,5 +1,6 @@
-import React from "react";
-async function getData() {
+import { NextResponse } from "next/server";
+
+export async function GET() {
   const response = await fetch(
     `https://api.mysportsfeeds.com/v2.1/pull/mlb/current/date/20230523/games.json`,
     {
@@ -15,20 +16,7 @@ async function getData() {
       },
     }
   );
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
+
   let data = await response.json();
-  return data;
+  return NextResponse.json({ data });
 }
-const Scores = async () => {
-  await getData();
-
-  return (
-    <div>
-      <h1>Todays Scores</h1>
-    </div>
-  );
-};
-
-export default Scores;
