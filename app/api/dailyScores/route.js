@@ -18,5 +18,7 @@ export async function GET() {
   );
 
   let data = await response.json();
-  return NextResponse.json({ data });
+
+  // return NextResponse.json({ data });
+  return data;
 }
