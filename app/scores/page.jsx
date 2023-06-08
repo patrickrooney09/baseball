@@ -10,9 +10,15 @@ const Scores = async () => {
       {games.games.map((currentGame, index) => {
         console.log(currentGame.schedule.awayTeam);
         return (
-          <div key={index}>
-            <div>{currentGame.schedule.awayTeam.abbreviation}</div>
-            <div>{currentGame.schedule.homeTeam.abbreviation}</div>
+          <div key={index} className="box-score">
+            <div>
+              {currentGame.schedule.awayTeam.abbreviation}{" "}
+              {currentGame.score.awayScoreTotal}
+            </div>
+            <div>
+              {currentGame.schedule.homeTeam.abbreviation}{" "}
+              {currentGame.score.homeScoreTotal}
+            </div>
           </div>
         );
       })}
