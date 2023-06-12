@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
+  let date = new Date().toJSON().slice(0, 10).replace(/-/g, "");
   const response = await fetch(
-    `https://api.mysportsfeeds.com/v2.1/pull/mlb/current/date/20230525/games.json`,
+    `https://api.mysportsfeeds.com/v2.1/pull/mlb/current/date/${date}/games.json`,
     {
       method: "GET",
       headers: {
